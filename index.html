@@ -728,7 +728,9 @@ class Component extends DCLogic {
       { n:24, name:"Vaso de Decoração Ousada",                   h:"20 cm", price:"R$ 69,90", per:"" },
       { n:25, name:"Vaso Moderno em Espirais",                   h:"15 cm", price:"R$ 54,90", per:"" },
       { n:26, name:"Bandeja Decorativa em Formato de Folha",     h:"",      price:"R$ 32,90", per:"" },
-    ].map(p => ({ ...p, img: "assets/p" + p.n + ".png", hasH: !!p.h }));
+      { n:27, name:"Árvore do Amor",                             h:"",      price:"R$ 14,90", per:"", img:"assets/car19.png" },
+      { n:28, name:"Expositor Home",                             h:"",      price:"R$ 14,90", per:"", img:"assets/car20.png" },
+    ].map(p => ({ ...p, img: p.img || "assets/p" + p.n + ".png", hasH: !!p.h }));
 
     const gloss = (c) => "radial-gradient(circle at 33% 27%, rgba(255,255,255,0.55), rgba(255,255,255,0) 42%), " + c;
     const filaments = [
@@ -788,8 +790,6 @@ class Component extends DCLogic {
       { n:15, name:"Foguete de Pressão de Ar", tipo:"Brinquedo", price:"R$ 64,90", per:"" },
       { n:16, name:"Jogo da Velha",       tipo:"Brinquedo", price:"R$ 9,90",  per:"" },
       { n:17, name:"Suporte de Copos Articulado de Tartaruga", tipo:"Expositor", price:"R$ 59,90", per:"" },
-      { n:18, name:"Árvore do Amor",       tipo:"Expositor", price:"R$ 14,90", per:"", img:"assets/car19.png" },
-      { n:19, name:"Expositor Home",       tipo:"Expositor", price:"R$ 14,90", per:"", img:"assets/car20.png" },
     ].map(c => ({ ...c, img: c.img || "assets/car" + c.n + ".png" }));
 
     const holders = [
