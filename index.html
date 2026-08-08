@@ -119,7 +119,7 @@
         <div style="font-size:13px; color:#8ea0c0; margin-top:5px;">Vasos, cachepôs e peças decorativas</div>
       </div>
     </div>
-    <div style="position:relative; font-family:'Space Grotesk',sans-serif; font-weight:600; font-size:13px; color:#cdd9ee; background:rgba(255,255,255,0.08); border:1px solid rgba(255,255,255,0.16); padding:7px 16px; border-radius:999px;">25 modelos</div>
+    <div style="position:relative; font-family:'Space Grotesk',sans-serif; font-weight:600; font-size:13px; color:#cdd9ee; background:rgba(255,255,255,0.08); border:1px solid rgba(255,255,255,0.16); padding:7px 16px; border-radius:999px;">{{ productsCount }} modelos</div>
   </div>
 
   <!-- grade de vasos -->
@@ -788,10 +788,9 @@ class Component extends DCLogic {
       { n:15, name:"Foguete de Pressão de Ar", tipo:"Brinquedo", price:"R$ 64,90", per:"" },
       { n:16, name:"Jogo da Velha",       tipo:"Brinquedo", price:"R$ 9,90",  per:"" },
       { n:17, name:"Suporte de Copos Articulado de Tartaruga", tipo:"Expositor", price:"R$ 59,90", per:"" },
-      { n:18, name:"Suporte de Aranha para Alexa", tipo:"Expositor", price:"R$ 29,90", per:"" },
-      { n:19, name:"Árvore do Amor",       tipo:"Expositor", price:"R$ 14,90", per:"" },
-      { n:20, name:"Expositor Home",       tipo:"Expositor", price:"R$ 14,90", per:"" },
-    ].map(c => ({ ...c, img: "assets/car" + c.n + ".png" }));
+      { n:18, name:"Árvore do Amor",       tipo:"Expositor", price:"R$ 14,90", per:"", img:"assets/car19.png" },
+      { n:19, name:"Expositor Home",       tipo:"Expositor", price:"R$ 14,90", per:"", img:"assets/car20.png" },
+    ].map(c => ({ ...c, img: c.img || "assets/car" + c.n + ".png" }));
 
     const holders = [
       { n:1, name:"Porta Card Pokémon (Branco e Vermelho)", price:"R$ 49,90", per:"", img:"assets/holder2.png" },
@@ -828,9 +827,9 @@ class Component extends DCLogic {
       { n:20, name:"Dispensador de Ovos", price:"R$ 79,90", per:"", img:"assets/util21.png" },
       { n:21, name:"Grampo em G", price:"R$ 24,90", per:"cada", img:"assets/util22.png" },
       { n:22, name:"Transportador de Sacola de Supermercado", price:"R$ 19,90", per:"", img:"assets/util23.png" },
-      { n:23, name:"Prateleira de Parede para Livros Inclinada (Par)", price:"R$ 59,90", per:"", img:"assets/util24.png" },
-      { n:24, name:"Lavador Inteligente de Frutas e Legumes (HydroBowl)", price:"R$ 134,90", per:"", img:"assets/util25.png" },
-      { n:25, name:"Porta Guardanapo I", price:"R$ 29,90", per:"", img:"assets/util31.png" },
+      { n:23, name:"Lavador Inteligente de Frutas e Legumes (HydroBowl)", price:"R$ 134,90", per:"", img:"assets/util25.png" },
+      { n:24, name:"Porta Guardanapo I", price:"R$ 29,90", per:"", img:"assets/util31.png" },
+      { n:25, name:"Suporte de Aranha para Alexa", price:"R$ 29,90", per:"", img:"assets/car18.png" },
     ];
     const utilCount = utils.length;
 
@@ -840,6 +839,7 @@ class Component extends DCLogic {
       { n:3, name:"Marcador de Páginas de Homenzinho II", price:"R$ 19,90", per:"", img:"assets/book3.png" },
       { n:4, name:"Marca Páginas de Gato III", price:"R$ 19,90", per:"", img:"assets/book4.png" },
       { n:5, name:"Suporte para Páginas de Livros", price:"R$ 12,90", per:"", img:"assets/book5.png" },
+      { n:6, name:"Prateleira de Parede para Livros Inclinada (Par)", price:"R$ 59,90", per:"", img:"assets/util24.png" },
     ];
     const bookCount = books.length;
 
@@ -978,6 +978,7 @@ class Component extends DCLogic {
 
     return {
       products,
+      productsCount: products.length,
       cars,
       carsCount: cars.length,
       holders,
